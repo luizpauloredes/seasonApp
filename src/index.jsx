@@ -26,7 +26,7 @@ class App extends React.Component {
                 <div>                               
                     <ErrorPage msg="Oops, sounds you don't want to show your location. Thanks anyway"
                     msg2="Accept google request location and refresh the page to work this page"
-                    />
+                    />                    
                 </div>
     
             )
@@ -45,7 +45,7 @@ class App extends React.Component {
         
         return (
             <div >
-                {this.renderContent()}
+                {this.renderContent()}               
             </div>
         )
 

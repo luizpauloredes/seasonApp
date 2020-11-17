@@ -1,5 +1,6 @@
 import './SeasonDisplay.css';
 import React from 'react';
+import NewLatitude from './NewLatitude'
 
 
 const seasonConfig = {
@@ -23,6 +24,7 @@ const getSeason = (lat, month) => {
 }
 
 
+
 const SeasonDisplay = (props) => {
 
     const season = getSeason(props.lat, new Date().getMonth());
@@ -32,6 +34,7 @@ const SeasonDisplay = (props) => {
         <i className={`icon-left massive ${iconName} icon`}/>
         <h1>
             {text}
+            <NewLatitude getlat={props.lat}/> 
         </h1>
         <i className={`icon-right massive ${iconName} icon`}/>
     </div>
