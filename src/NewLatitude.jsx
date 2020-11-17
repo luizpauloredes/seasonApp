@@ -1,23 +1,20 @@
-
-const NewLatitude = (props) => {
-
+import React, {useState} from 'react'; 
 
 
-    const getLatitude = () => {
+const NewLatitude = ({ getlat, newlat} ) => {
+    const [value, setValue] = useState(getlat)
 
-        const newLat = document.querySelector('#newLat').value
-
-        return (
-            console.log(newLat)      
-        )
-    }
-
+    
 
     return (
         <form action="">
-            <h2>Your current latitude is {props.getlat}</h2>
-            <input type="text" placeholder="Input a latitude manually " id="newLat" />
-            <button type="submit" onClick={getLatitude}>Send</button>
+            <h2>Your current latitude is {value}</h2>
+            <input type="text" onChange={(e) => {setValue(e.target.value)}} placeholder="Input a latitude manually " id="newLat" />
+            <button type="submit" onClick={(e)=> {
+                e.preventDefault()
+                newlat(value)
+                }} >Send</button>
+
         </form>
     )
 
